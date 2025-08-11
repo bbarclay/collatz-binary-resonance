@@ -1,0 +1,202 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{hyperref}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{definition}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\N}{\mathbb{N}}
+
+\title{The Sequence $s_n = \frac{2^{2n+1} + 1}{3}$: A Complete Mathematical Analysis}
+\author{[Author Name]}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We provide a rigorous mathematical analysis of the integer sequence defined by $s_n = \frac{2^{2n+1} + 1}{3}$ for $n \geq 0$. We prove that this formula is well-defined, establish a linear recurrence relation, and analyze divisibility properties. All results are presented with complete proofs.
+\end{abstract}
+
+\section{Introduction and Preliminaries}
+
+\begin{definition}[$2$-adic valuation]
+For a nonzero integer $m$, the $2$-adic valuation $\nu_2(m)$ is the largest integer $k$ such that $2^k$ divides $m$. We define $\nu_2(0) = \infty$.
+\end{definition}
+
+\begin{definition}[$2$-adic absolute value]
+For a nonzero integer $m$, the $2$-adic absolute value is $|m|_2 = 2^{-\nu_2(m)}$. We define $|0|_2 = 0$.
+\end{definition}
+
+\begin{lemma}\label{lem:div3}
+For all integers $n \geq 0$, we have $2^{2n+1} \equiv 2 \pmod{3}$.
+\end{lemma}
+
+\begin{proof}
+We have $2 \equiv -1 \pmod{3}$, so $2^{2n+1} = 2 \cdot (2^2)^n = 2 \cdot 4^n$. Since $4 \equiv 1 \pmod{3}$, we get $2^{2n+1} \equiv 2 \cdot 1^n = 2 \equiv -1 \pmod{3}$. Therefore $2^{2n+1} + 1 \equiv 0 \pmod{3}$.
+\end{proof}
+
+\section{Main Results}
+
+\begin{theorem}[Well-defined sequence]
+The sequence $s_n = \frac{2^{2n+1} + 1}{3}$ consists of positive integers for all $n \geq 0$.
+\end{theorem}
+
+\begin{proof}
+By Lemma~\ref{lem:div3}, $3$ divides $2^{2n+1} + 1$, so $s_n$ is an integer. Since $2^{2n+1} > 0$, we have $s_n > 0$.
+\end{proof}
+
+\begin{theorem}[Explicit values]
+The first terms of the sequence are:
+\begin{itemize}
+\item $s_0 = 1$
+\item $s_1 = 3$
+\item $s_2 = 11$
+\item $s_3 = 43$
+\item $s_4 = 171$
+\end{itemize}
+\end{theorem}
+
+\begin{proof}
+Direct computation:
+\begin{align}
+s_0 &= \frac{2^1 + 1}{3} = \frac{3}{3} = 1\\
+s_1 &= \frac{2^3 + 1}{3} = \frac{9}{3} = 3\\
+s_2 &= \frac{2^5 + 1}{3} = \frac{33}{3} = 11\\
+s_3 &= \frac{2^7 + 1}{3} = \frac{129}{3} = 43\\
+s_4 &= \frac{2^9 + 1}{3} = \frac{513}{3} = 171 \qedhere
+\end{align}
+\end{proof}
+
+\begin{theorem}[Recurrence relation]\label{thm:recurrence}
+For all $n \geq 0$, we have $s_{n+1} = 4s_n - 1$.
+\end{theorem}
+
+\begin{proof}
+Starting from the definition:
+\[s_{n+1} = \frac{2^{2(n+1)+1} + 1}{3} = \frac{2^{2n+3} + 1}{3}\]
+
+We can rewrite $2^{2n+3} = 4 \cdot 2^{2n+1}$. Therefore:
+\[s_{n+1} = \frac{4 \cdot 2^{2n+1} + 1}{3}\]
+
+From the definition of $s_n$, we have $3s_n = 2^{2n+1} + 1$, which gives $2^{2n+1} = 3s_n - 1$.
+
+Substituting:
+\[s_{n+1} = \frac{4(3s_n - 1) + 1}{3} = \frac{12s_n - 4 + 1}{3} = \frac{12s_n - 3}{3} = 4s_n - 1 \qedhere\]
+\end{proof}
+
+\begin{theorem}[Modular inverse property]
+For all $n \geq 0$, $s_n$ is the unique integer with $0 < s_n < 2^{2n+1}$ satisfying $3s_n \equiv 1 \pmod{2^{2n+1}}$.
+\end{theorem}
+
+\begin{proof}
+From the definition, $3s_n = 2^{2n+1} + 1$, so $3s_n - 1 = 2^{2n+1}$.
+This means $3s_n \equiv 1 \pmod{2^{2n+1}}$.
+
+Since $s_n = \frac{2^{2n+1} + 1}{3} < \frac{2^{2n+1} + 2^{2n+1}}{3} = \frac{2 \cdot 2^{2n+1}}{3} < 2^{2n+1}$, we have $0 < s_n < 2^{2n+1}$.
+
+For uniqueness: Suppose $3t \equiv 1 \pmod{2^{2n+1}}$ with $0 < t < 2^{2n+1}$.
+Then $3(s_n - t) \equiv 0 \pmod{2^{2n+1}}$.
+Since $\gcd(3, 2^{2n+1}) = 1$ (as $3$ is odd and $2^{2n+1}$ is a power of $2$), we have $s_n \equiv t \pmod{2^{2n+1}}$.
+Since both $s_n$ and $t$ lie in the interval $(0, 2^{2n+1})$, we must have $s_n = t$.
+\end{proof}
+
+\begin{theorem}[Divisibility by powers of 2]
+For all $n \geq 0$, $s_n$ divides $2^{4n+2} - 1$.
+\end{theorem}
+
+\begin{proof}
+We have $3s_n = 2^{2n+1} + 1$, so $2^{2n+1} \equiv -1 \pmod{s_n}$.
+Squaring both sides: $(2^{2n+1})^2 \equiv 1 \pmod{s_n}$.
+Therefore $2^{4n+2} \equiv 1 \pmod{s_n}$, which means $s_n \mid (2^{4n+2} - 1)$.
+\end{proof}
+
+\begin{theorem}[Congruence modulo 8]
+We have:
+\begin{itemize}
+\item For $n = 0$: $s_0 = 1 \equiv 1 \pmod{8}$
+\item For $n = 1$: $s_1 = 3 \equiv 3 \pmod{8}$
+\item For $n \geq 2$: $s_n \equiv 3 \pmod{8}$
+\end{itemize}
+\end{theorem}
+
+\begin{proof}
+For $n \geq 2$, we have $2n + 1 \geq 5$, so $2^{2n+1} \equiv 0 \pmod{32}$.
+Therefore $2^{2n+1} + 1 \equiv 1 \pmod{32}$.
+
+We need to find $s_n = \frac{2^{2n+1} + 1}{3}$ modulo $8$.
+Since $2^{2n+1} + 1 \equiv 1 \pmod{32}$, we can write $2^{2n+1} + 1 = 32k + 1$ for some integer $k$.
+
+We need $32k + 1 \equiv 0 \pmod{3}$, which gives $k \equiv 1 \pmod{3}$.
+So $k = 3m + 1$ for some integer $m$, and $2^{2n+1} + 1 = 32(3m + 1) + 1 = 96m + 33$.
+
+Therefore $s_n = \frac{96m + 33}{3} = 32m + 11 \equiv 11 \equiv 3 \pmod{8}$.
+\end{proof}
+
+\section{Convergence in the $2$-adic Integers}
+
+\begin{theorem}[Cauchy sequence]
+The sequence $\{s_n\}$ is Cauchy with respect to the $2$-adic metric.
+\end{theorem}
+
+\begin{proof}
+For $m > n \geq 0$:
+\begin{align}
+s_m - s_n &= \frac{2^{2m+1} + 1}{3} - \frac{2^{2n+1} + 1}{3}\\
+&= \frac{2^{2m+1} - 2^{2n+1}}{3}\\
+&= \frac{2^{2n+1}(2^{2(m-n)} - 1)}{3}
+\end{align}
+
+Since $2^{2(m-n)} - 1$ is odd for $m > n$ (as $2^k - 1$ is odd for all $k \geq 1$), and $3$ is odd, the denominator contributes no factors of $2$.
+Therefore $\nu_2(s_m - s_n) = 2n + 1$.
+
+This gives $|s_m - s_n|_2 = 2^{-(2n+1)} \to 0$ as $n \to \infty$.
+\end{proof}
+
+\section{Base-4 Representation}
+
+\begin{theorem}
+For $n \geq 1$, in base-$4$ notation: $s_n$ consists of $(n-1)$ digits of $2$ followed by a single digit $3$.
+\end{theorem}
+
+\begin{proof}
+We proceed by induction.
+
+\textbf{Base case} ($n=1$): $s_1 = 3 = 3_4$. \checkmark
+
+\textbf{Inductive step}: Assume $s_n$ has $(n-1)$ twos followed by a three in base $4$.
+
+This means $s_n = 2(4^{n-1} + 4^{n-2} + \cdots + 4 + 1) + 1 = 2 \cdot \frac{4^n - 1}{4 - 1} + 1 = \frac{2 \cdot 4^n - 2 + 3}{3} = \frac{2 \cdot 4^n + 1}{3}$.
+
+Now $s_{n+1} = 4s_n - 1 = 4 \cdot \frac{2 \cdot 4^n + 1}{3} - 1 = \frac{8 \cdot 4^n + 4 - 3}{3} = \frac{8 \cdot 4^n + 1}{3} = \frac{2 \cdot 4^{n+1} + 1}{3}$.
+
+This has the form required for $n+1$, completing the induction.
+\end{proof}
+
+\section{Open Questions}
+
+\begin{enumerate}
+\item How many terms $s_n$ are prime numbers?
+\item Can we characterize all prime divisors of $s_n$ for given $n$?
+\item What is the growth rate of the largest prime factor of $s_n$?
+\end{enumerate}
+
+\section{Conclusion}
+
+We have provided a complete mathematical characterization of the sequence $s_n = \frac{2^{2n+1} + 1}{3}$ with rigorous proofs of all stated properties. The sequence has interesting connections to modular arithmetic and the $2$-adic integers.
+
+\begin{thebibliography}{9}
+\bibitem{hardy}
+G.H. Hardy and E.M. Wright, \emph{An Introduction to the Theory of Numbers}, Oxford University Press, 2008.
+
+\bibitem{koblitz}
+N. Koblitz, \emph{$p$-adic Numbers, $p$-adic Analysis, and Zeta-Functions}, Springer-Verlag, 1984.
+\end{thebibliography}
+
+\end{document}
