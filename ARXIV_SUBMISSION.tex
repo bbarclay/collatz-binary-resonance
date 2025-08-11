@@ -67,27 +67,37 @@ The following are equivalent characterizations of $s_n$:
 \item $s_n = \frac{2^{2n+1} + 1}{3}$
 \item $s_n$ is the unique positive integer less than $2^{2n+1}$ such that $3s_n \equiv 1 \pmod{2^{2n+1}}$
 \item $s_n$ satisfies the recurrence $s_{n+1} = 4s_n - 1$ with $s_0 = 1$
-\item In binary notation, $s_n$ has $1$-bits at positions $\{0, 1, 3, 5, 7, \ldots, 2n-1\}$
 \end{enumerate}
 \end{theorem}
 
 \begin{proof}
-$(1) \Leftrightarrow (2)$: Direct verification that $3 \cdot \frac{2^{2n+1} + 1}{3} = 2^{2n+1} + 1 \equiv 1 \pmod{2^{2n+1}}$.
+$(1) \Leftrightarrow (2)$: We compute $3s_n = 3 \cdot \frac{2^{2n+1} + 1}{3} = 2^{2n+1} + 1$.
+Thus $3s_n - 1 = 2^{2n+1}$, which means $3s_n \equiv 1 \pmod{2^{2n+1}}$.
 
-$(1) \Rightarrow (3)$: If $s_n = \frac{2^{2n+1} + 1}{3}$, then
+For uniqueness: if $3t \equiv 1 \pmod{2^{2n+1}}$ with $0 < t < 2^{2n+1}$, then $3(s_n - t) \equiv 0 \pmod{2^{2n+1}}$. Since $\gcd(3, 2^{2n+1}) = 1$, we have $s_n \equiv t \pmod{2^{2n+1}}$. Since both are positive and less than $2^{2n+1}$, we have $s_n = t$.
+
+$(1) \Rightarrow (3)$: We verify:
 \begin{align}
-s_{n+1} &= \frac{2^{2n+3} + 1}{3} = \frac{4 \cdot 2^{2n+1} + 1}{3} = \frac{4(3s_n - 1) + 1}{3} = 4s_n - 1.
+s_{n+1} &= \frac{2^{2(n+1)+1} + 1}{3} = \frac{2^{2n+3} + 1}{3} = \frac{4 \cdot 2^{2n+1} + 1}{3}\\
+&= \frac{4(3s_n - 1) + 1}{3} = \frac{12s_n - 3}{3} = 4s_n - 1.
 \end{align}
-
-$(1) \Rightarrow (4)$: By induction on the binary structure (details omitted for brevity).
+For $n = 0$: $s_0 = \frac{2^1 + 1}{3} = 1$.
 \end{proof}
 
 \begin{theorem}[$2$-adic Convergence]\label{thm:2adic}
-The sequence $\{s_n\}$ converges in the $2$-adic metric to $-\frac{1}{3} \in \Q_2$ with $|s_n - (-\frac{1}{3})|_2 = 2^{-(2n+1)}$.
+The sequence $\{s_n\}$ converges in the $2$-adic metric to $-\frac{1}{3} \in \Q_2$.
 \end{theorem}
 
 \begin{proof}
-The sequence is Cauchy since $|s_{n+1} - s_n|_2 = |4s_n - 1 - s_n|_2 = |3s_n - 1|_2 = |2^{2n+1}|_2 = 2^{-(2n+1)} \to 0$. The limit satisfies $3s_\infty = 1 + 2 + 4 + 8 + \cdots = -1$ in $\Q_2$, so $s_\infty = -\frac{1}{3}$.
+We show the sequence is Cauchy in the $2$-adic metric. For $n < m$:
+\begin{align}
+s_m - s_n &= \frac{2^{2m+1} + 1}{3} - \frac{2^{2n+1} + 1}{3} = \frac{2^{2n+1}(2^{2(m-n)} - 1)}{3}
+\end{align}
+Since $2^{2(m-n)} - 1$ is odd, we have $\nu_2(s_m - s_n) = 2n + 1$.
+Thus $|s_m - s_n|_2 = 2^{-(2n+1)} \to 0$ as $n \to \infty$.
+
+From the recurrence $s_{n+1} = 4s_n - 1$, taking the $2$-adic limit:
+$s_\infty = 4s_\infty - 1$, which gives $3s_\infty = -1$, hence $s_\infty = -\frac{1}{3}$.
 \end{proof}
 
 \begin{theorem}[Divisibility Properties]\label{thm:divisibility}
@@ -102,7 +112,9 @@ For $n \geq 1$:
 \begin{proof}
 (1) From $s_n = \frac{2^{2n+1} + 1}{3}$ and $2^{2n+1} \equiv 0 \pmod{8}$ for $n \geq 2$.
 
-(2) Since $3s_n = 2^{2n+1} + 1$, we have $(2^{2n+1})^2 = 2^{4n+2} \equiv (-1)^2 = 1 \pmod{3s_n}$, so $3s_n \mid 2^{4n+2} - 1$. Since $\gcd(3, 2^{4n+2} - 1) = 1$, we have $s_n \mid 2^{4n+2} - 1$.
+(2) We have $3s_n = 2^{2n+1} + 1$, so $2^{2n+1} \equiv -1 \pmod{s_n}$.
+Squaring: $(2^{2n+1})^2 = 2^{4n+2} \equiv 1 \pmod{s_n}$.
+Therefore $s_n \mid 2^{4n+2} - 1$.
 \end{proof}
 
 \begin{theorem}[Hensel Lifting]\label{thm:hensel}
@@ -132,40 +144,24 @@ The sequence contains only finitely many primes.
 \section{Base-4 Representation and Automaticity}
 
 \begin{theorem}[Base-4 Pattern]\label{thm:base4}
-In base $4$, $s_n$ has the representation $222\ldots223_4$ ($n-1$ copies of digit $2$, followed by digit $3$).
+In base $4$, $s_n$ has the representation $222\ldots223_4$ ($n-1$ copies of digit $2$, followed by digit $3$) for $n \geq 1$.
 \end{theorem}
 
 \begin{proof}
-By the recurrence $s_{n+1} = 4s_n - 1$, multiplication by $4$ shifts base-$4$ digits left, and subtracting $1$ adjusts the rightmost digits to maintain the pattern.
+By induction. Base case: $s_1 = 3 = 3_4$.
+
+Inductive step: Assume $s_n = 222\ldots223_4$ with $n-1$ twos.
+In base $4$: $s_n = 2(4^{n-1} + 4^{n-2} + \cdots + 1) + 1 = \frac{2 \cdot 4^n + 1}{3}$.
+
+Then $s_{n+1} = 4s_n - 1 = \frac{4(2 \cdot 4^n + 1) - 3}{3} = \frac{8 \cdot 4^n + 1}{3} = \frac{2 \cdot 4^{n+1} + 1}{3}$.
+
+This equals $222\ldots223_4$ with $n$ twos.
 \end{proof}
 
 \begin{theorem}[Automaticity]\label{thm:automatic}
 The sequence $\{s_n \bmod 2^k\}$ is eventually periodic with period dividing $2^k$ for any fixed $k \geq 1$.
 \end{theorem}
 
-\section{Statistical Analysis of Collatz Connections}
-
-We performed statistical analysis on $5000$ odd integers near each $s_n$ for $n \leq 6$, comparing Collatz trajectory properties with control samples.
-
-\begin{table}[h]
-\centering
-\begin{tabular}{@{}ccccccc@{}}
-\toprule
-$n$ & $s_n$ & Mean trajectory & Control mean & $p$-value & Variance ratio \\
-\midrule
-2 & 11 & 84.28 & 34.50 & $<0.0001$ & 1.692 \\
-3 & 43 & 84.32 & 56.11 & $<0.0001$ & 1.398 \\
-4 & 171 & 84.45 & 65.39 & $<0.0001$ & 1.398 \\
-5 & 683 & 85.27 & 81.30 & $0.0002$ & 1.065 \\
-\bottomrule
-\end{tabular}
-\caption{Statistical analysis of Collatz trajectories near $s_n$}
-\label{tab:collatz-stats}
-\end{table}
-
-\textbf{Observation:} There appears to be a statistically significant correlation between proximity to $s_n$ and Collatz trajectory properties, though the underlying mechanism is unclear.
-
-\textbf{Caution:} While intriguing, this correlation does not constitute proof of any deep connection to the Collatz conjecture. Further theoretical investigation is needed.
 
 \section{Connections to $p$-adic Analysis}
 

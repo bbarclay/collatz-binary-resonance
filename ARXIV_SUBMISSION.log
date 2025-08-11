@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025/Homebrew) (preloaded format=pdflatex 2025.3.15)  11 AUG 2025 09:18
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025/Homebrew) (preloaded format=pdflatex 2025.3.15)  11 AUG 2025 10:45
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -619,7 +619,7 @@ cmr/m/n/10 171\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 683\OML/cmm/m/it/10 ; \OT1/cmr
 
 {/usr/local/Cellar/texlive/20250308_1/share/texmf-dist/fonts/map/pdftex/updmap/
 pdftex.map}]
-Overfull \hbox (62.9874pt too wide) in paragraph at lines 126--127
+Overfull \hbox (62.9874pt too wide) in paragraph at lines 138--139
 []\OT1/cmr/m/n/10.95 Computational ver-i-fi-ca-tion up to $\OML/cmm/m/it/10.95 
 n \OT1/cmr/m/n/10.95 = 100$ shows that $\OML/cmm/m/it/10.95 s[]$ \OT1/cmr/m/n/1
 0.95 is prime for $\OML/cmm/m/it/10.95 n \OMS/cmsy/m/n/10.95 2 f\OT1/cmr/m/n/10
@@ -637,23 +637,17 @@ ML/cmm/m/it/10.95 ; []\OMS/cmsy/m/n/10.95 g$\OT1/cmr/m/n/10.95 .
 [2]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 170.
+(hyperref)                removing `math shift' on input line 166.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 170.
+(hyperref)                removing `math shift' on input line 166.
 
 
 
-[3
-pdfTeX warning (ext4): destination with the same identifier (name{table.1}) has
- been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.196 \begin{thebibliography}{9}
-                                ]
+[3]
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
-put line 221.
+put line 217.
 
 
 [4] (./ARXIV_SUBMISSION.aux)
@@ -661,44 +655,58 @@ put line 221.
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
-Package rerunfilecheck Info: File `ARXIV_SUBMISSION.out' has not changed.
-(rerunfilecheck)             Checksum: 7476666FDFCFF805A72E60D7C362637C;1574.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+
+Package rerunfilecheck Warning: File `ARXIV_SUBMISSION.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `ARXIV_SUBMISSION.out':
+(rerunfilecheck)             Before: 7476666FDFCFF805A72E60D7C362637C;1574
+(rerunfilecheck)             After:  8EBDC6EE2FFC4CAF7C2DC5FD0A9B5182;1304.
  ) 
 Here is how much of TeX's memory you used:
- 11429 strings out of 473190
- 178482 string characters out of 5705898
- 592538 words of memory out of 5000000
- 34478 multiletter control sequences out of 15000+600000
+ 11425 strings out of 473190
+ 178409 string characters out of 5705898
+ 590538 words of memory out of 5000000
+ 34474 multiletter control sequences out of 15000+600000
  571557 words of font info for 86 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,9n,79p,602b,574s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/Cellar/texlive/20250308_1/share/texmf-dist/fonts/type1/public/ams
-fonts/cm/cmbx10.pfb></usr/local/Cellar/texlive/20250308_1/share/texmf-dist/font
-s/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/Cellar/texlive/20250308_1/sha
-re/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/Cellar/texl
-ive/20250308_1/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr
-/local/Cellar/texlive/20250308_1/share/texmf-dist/fonts/type1/public/amsfonts/c
-m/cmmi5.pfb></usr/local/Cellar/texlive/20250308_1/share/texmf-dist/fonts/type1/
-public/amsfonts/cm/cmmi6.pfb></usr/local/Cellar/texlive/20250308_1/share/texmf-
-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/Cellar/texlive/202503
-08_1/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/Cell
-ar/texlive/20250308_1/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb
-></usr/local/Cellar/texlive/20250308_1/share/texmf-dist/fonts/type1/public/amsf
-onts/cm/cmr12.pfb></usr/local/Cellar/texlive/20250308_1/share/texmf-dist/fonts/
-type1/public/amsfonts/cm/cmr17.pfb></usr/local/Cellar/texlive/20250308_1/share/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/Cellar/texlive/2
-0250308_1/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/
-Cellar/texlive/20250308_1/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.
-pfb></usr/local/Cellar/texlive/20250308_1/share/texmf-dist/fonts/type1/public/a
-msfonts/cm/cmr8.pfb></usr/local/Cellar/texlive/20250308_1/share/texmf-dist/font
-s/type1/public/amsfonts/cm/cmr9.pfb></usr/local/Cellar/texlive/20250308_1/share
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/Cellar/texliv
-e/20250308_1/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/lo
-cal/Cellar/texlive/20250308_1/share/texmf-dist/fonts/type1/public/amsfonts/cm/c
-mti10.pfb></usr/local/Cellar/texlive/20250308_1/share/texmf-dist/fonts/type1/pu
-blic/amsfonts/cm/cmtt12.pfb></usr/local/Cellar/texlive/20250308_1/share/texmf-d
-ist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on ARXIV_SUBMISSION.pdf (4 pages, 242399 bytes).
+ 75i,9n,79p,602b,585s stack positions out of 10000i,1000n,20000p,200000b,200000s
+
+pdfTeX warning (dest): name{section.8} has been referenced but does not exist, 
+replaced by a fixed one
+
+</usr/local/Cellar/texlive/20250308_1/share/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmbx10.pfb></usr/local/Cellar/texlive/20250308_1/share/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmbx12.pfb></usr/local/Cellar/texlive/20250308_1/share
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/Cellar/texliv
+e/20250308_1/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/l
+ocal/Cellar/texlive/20250308_1/share/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmmi5.pfb></usr/local/Cellar/texlive/20250308_1/share/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmmi6.pfb></usr/local/Cellar/texlive/20250308_1/share/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/Cellar/texlive/20250308
+_1/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/Cellar
+/texlive/20250308_1/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><
+/usr/local/Cellar/texlive/20250308_1/share/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmr12.pfb></usr/local/Cellar/texlive/20250308_1/share/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmr17.pfb></usr/local/Cellar/texlive/20250308_1/share/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/Cellar/texlive/202
+50308_1/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/Ce
+llar/texlive/20250308_1/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pf
+b></usr/local/Cellar/texlive/20250308_1/share/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmr8.pfb></usr/local/Cellar/texlive/20250308_1/share/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmr9.pfb></usr/local/Cellar/texlive/20250308_1/share/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/Cellar/texlive/
+20250308_1/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/loca
+l/Cellar/texlive/20250308_1/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmt
+i10.pfb></usr/local/Cellar/texlive/20250308_1/share/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmtt12.pfb></usr/local/Cellar/texlive/20250308_1/share/texmf-dis
+t/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on ARXIV_SUBMISSION.pdf (4 pages, 243165 bytes).
 PDF statistics:
  225 PDF objects out of 1000 (max. 8388607)
  175 compressed objects within 2 object streams
